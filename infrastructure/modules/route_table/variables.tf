@@ -13,7 +13,3 @@ variable "mv_route_destination" {
 variable "mv_internet_gateway_id" {
   type = string
 }
-
-variable "mv_subnet_id" {
-  type = string
-}

@@ -1,3 +1,7 @@
+output "id" {
+  value = aws_route_table.route_table.id
+}
+
 output "name" {
-  value = aws_ecr_repository.flask_app.name
+  value = aws_route_table.route_table.name
 }

@@ -1,7 +1,8 @@
-variable "mv_vpc_cidr_block" {
-  type    = string
-}
+resource "aws_vpc" "main" {
+  cidr_block = var.mv_vpc_cidr_block
+  enable_dns_hostnames = true
 
-variable "mv_vpc_name" {
-  type    = string
+  tags = {
+    Name = var.mv_vpc_name
+  }
 }

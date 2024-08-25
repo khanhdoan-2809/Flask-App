@@ -6,7 +6,7 @@ variable "mv_subnet_name" {
   type    = string
 }
 
-variable "mv_vpc_cidr_block" {
+variable "mv_cidr_block" {
   type    = string
 }
 
