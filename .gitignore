@@ -1,1 +1,2 @@
-_pycache_/
+app/_pycache_/
+infrastructure/.terraform/
