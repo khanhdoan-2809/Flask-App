@@ -30,3 +30,8 @@ variable "lv_ecr_repository_name" {
 variable "lv_ecs_cluster_name" {
   type = string
 }
+
+# ELB
+variable "lv_application_load_balancer_name" {
+  type = string
+}

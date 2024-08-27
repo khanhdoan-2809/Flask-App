@@ -86,5 +86,24 @@ module "route_table_public_subnet_c" {
 module "ecs" {
   source                  = "./modules/ecs"
   mv_ecr_repository_name  = var.lv_ecr_repository_name
-  mv_ecs_cluster_name  = var.lv_ecs_cluster_name 
+  mv_ecs_cluster_name     = var.lv_ecs_cluster_name 
+}
+
+#####################
+# Security Group
+#####################
+module "sg" {
+  source    = "./modules/sg"
+  mv_vpc_id = module.vpc.id
+}
+
+#####################
+# ELB
+#####################
+module "elb" {
+  source                            = "./modules/elb"
+  mv_vpc_id                         = module.vpc.id
+  mv_application_load_balancer_name = var.lv_application_load_balancer_name
+  mv_subnet_ids                     = [module.public_subnet_a.id, module.public_subnet_b.id, module.public_subnet_c.id]
+  mv_security_groups                = [module.sg.id]
 }
