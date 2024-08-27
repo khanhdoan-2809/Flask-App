@@ -79,3 +79,12 @@ module "route_table_public_subnet_c" {
   mv_route_table_id       = module.route_table.id
   mv_subnet_id            = module.public_subnet_c.id
 }
+
+#####################
+# ECS
+#####################
+module "ecs" {
+  source                  = "./modules/ecs"
+  mv_ecr_repository_name  = var.lv_ecr_repository_name
+  mv_ecs_cluster_name  = var.lv_ecs_cluster_name 
+}

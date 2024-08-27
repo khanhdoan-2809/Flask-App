@@ -11,3 +11,9 @@ lv_igw_name = "Flask App VPC - Internet Gateway"
 # routable
 lv_route_table_name     = "Public Subnet Route Table"
 lv_route_destination    = "0.0.0.0/0"
+
+# ecr
+lv_ecr_repository_name = "flask-app"
+
+#ecs
+lv_ecs_cluster_name = my-cluster 
