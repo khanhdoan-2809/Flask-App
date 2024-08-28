@@ -27,6 +27,10 @@ variable "lv_ecr_repository_name" {
 }
 
 # ecs
+variable "lv_ecs_service_name" {
+  type = string
+}
+
 variable "lv_ecs_cluster_name" {
   type = string
 }

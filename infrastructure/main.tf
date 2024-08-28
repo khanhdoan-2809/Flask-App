@@ -107,3 +107,18 @@ module "elb" {
   mv_subnet_ids                     = [module.public_subnet_a.id, module.public_subnet_b.id, module.public_subnet_c.id]
   mv_security_groups                = [module.sg.id]
 }
+
+#####################
+# ECS Service
+#####################
+module "ecs_service" {
+  source                          = "./modules/ecs_service"
+  mv_ecs_service_name             = var.lv_ecs_service_name
+  mv_ecs_cluster_name             = module.ecs.ecs_cluster_name
+  mv_target_group_arn             = module.elb.target_group_arn
+  mv_subnet_ids                   = [module.public_subnet_a.id, module.public_subnet_b.id, module.public_subnet_c.id]
+  mv_ecs_task_defiition           = module.ecs.ecs_task_definition_arn
+  mv_task_family                  = module.ecs.ecs_task_definition_family
+  mv_load_balancer_security_group = [module.sg.id]
+  mv_vpc_id                       = module.vpc.id
+}

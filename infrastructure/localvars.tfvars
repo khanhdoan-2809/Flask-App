@@ -14,6 +14,7 @@ lv_route_destination    = "0.0.0.0/0"
 
 # ecs
 lv_ecs_cluster_name = "my-cluster" 
+lv_ecs_service_name = "ecs-service-name"
 
 # elb
 lv_application_load_balancer_name = "application-load-balancer"
